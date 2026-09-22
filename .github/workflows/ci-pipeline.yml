@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -21,7 +21,7 @@ jobs:
           node-version: 20
           cache: npm
       - name: Install dependencies
-        uses: npm install
+        run: npm install
 
       - name: Run Automation Tests
         run: npm run test
